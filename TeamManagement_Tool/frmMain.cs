@@ -312,18 +312,38 @@ namespace TeamManagement_Tool
         {
             frmProjekt project = new frmProjekt();
             project.ShowDialog(this);
+
+            SQLSaveProject(project);
+        }
+
+        private void dgProjekt_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmProjekt project = new frmProjekt();
+            project.tbID.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektID.Name].Value.ToString();
+            project.tbName.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektName.Name].Value.ToString();
+            project.tbGenre.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektGenre.Name].Value.ToString();
+            project.tbStil.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektStil.Name].Value.ToString();
+            project.tbPlatform.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektPlatform.Name].Value.ToString();
+            project.tbStartDatum.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektStartDatum.Name].Value.ToString();
+            project.tbRelease.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektRelease.Name].Value.ToString();
+            project.tbArbeitstitel.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektArbeitstitel.Name].Value.ToString();
+            project.tbNotiz.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektNotiz.Name].Value.ToString();
+            project.ShowDialog(this);
+
+            SQLSaveProject(project);
+        }
+
+        private void SQLSaveProject(frmProjekt project)
+        {
             if (project.shouldSave == true)
             {
                 try
                 {
-                    //Mitarbeiter
+                    //Projekt
 
                     MySqlCommand sqlCmd;// = new MySqlCommand("Select * from Projects", sqlConnection);
                     string cmdString;
                     sqlConnection.Open();
-
-
-
 
                     if (project.tbID.Text == "")  //Neues Projekt
                     {
@@ -335,16 +355,18 @@ namespace TeamManagement_Tool
                         "'" + project.tbPlatform.Text + "'," +
                         "'" + project.tbStartDatum.Text + "'," +
                         "'" + project.tbRelease.Text + "'," +
-                        //"'" + project.dtpStartDatum.Value.Date.ToString() + "'," +
-                        //"'" + project.dtpRelease.Value.Date.ToString() + "'," +
+                            //"'" + project.dtpStartDatum.Value.Date.ToString() + "'," +
+                            //"'" + project.dtpRelease.Value.Date.ToString() + "'," +
                         "'" + project.tbArbeitstitel.Text + "'," +
                         "'" + project.tbNotiz.Text + "');";
-                        
+
                         sqlCmd = new MySqlCommand(cmdString, sqlConnection);
                         sqlCmd.ExecuteNonQuery();
                     }
                     else //Bestehendes Ändern
-                    { }
+                    {
+
+                    }
 
                     sqlConnection.Close();
                     SQLRefreshProjekte();

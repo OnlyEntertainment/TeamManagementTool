@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Grafik");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Entwickler");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("John Riddle I", new System.Windows.Forms.TreeNode[] {
-            treeNode13,
-            treeNode14});
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("John Riddle II");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Grafik");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Entwickler");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("John Riddle I", new System.Windows.Forms.TreeNode[] {
+            treeNode5,
+            treeNode6});
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("John Riddle II");
             this.menu = new System.Windows.Forms.MenuStrip();
             this.menuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFileProperties = new System.Windows.Forms.ToolStripMenuItem();
@@ -788,8 +788,10 @@
             this.dgProjekt.Location = new System.Drawing.Point(6, 6);
             this.dgProjekt.Name = "dgProjekt";
             this.dgProjekt.ReadOnly = true;
+            this.dgProjekt.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgProjekt.Size = new System.Drawing.Size(771, 216);
             this.dgProjekt.TabIndex = 14;
+            this.dgProjekt.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProjekt_CellContentClick);
             // 
             // dgProjektID
             // 
@@ -1128,17 +1130,17 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(6, 37);
             this.treeView1.Name = "treeView1";
-            treeNode13.Name = "Knoten2";
-            treeNode13.Text = "Grafik";
-            treeNode14.Name = "Knoten3";
-            treeNode14.Text = "Entwickler";
-            treeNode15.Name = "NOde 1";
-            treeNode15.Text = "John Riddle I";
-            treeNode16.Name = "Node2";
-            treeNode16.Text = "John Riddle II";
+            treeNode5.Name = "Knoten2";
+            treeNode5.Text = "Grafik";
+            treeNode6.Name = "Knoten3";
+            treeNode6.Text = "Entwickler";
+            treeNode7.Name = "NOde 1";
+            treeNode7.Text = "John Riddle I";
+            treeNode8.Name = "Node2";
+            treeNode8.Text = "John Riddle II";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode15,
-            treeNode16});
+            treeNode7,
+            treeNode8});
             this.treeView1.Size = new System.Drawing.Size(294, 200);
             this.treeView1.TabIndex = 12;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
