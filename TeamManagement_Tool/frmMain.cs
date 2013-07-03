@@ -316,23 +316,6 @@ namespace TeamManagement_Tool
             SQLSaveProject(project);
         }
 
-        private void dgProjekt_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            frmProjekt project = new frmProjekt();
-            project.tbID.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektID.Name].Value.ToString();
-            project.tbName.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektName.Name].Value.ToString();
-            project.tbGenre.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektGenre.Name].Value.ToString();
-            project.tbStil.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektStil.Name].Value.ToString();
-            project.tbPlatform.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektPlatform.Name].Value.ToString();
-            project.tbStartDatum.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektStartDatum.Name].Value.ToString();
-            project.tbRelease.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektRelease.Name].Value.ToString();
-            project.tbArbeitstitel.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektArbeitstitel.Name].Value.ToString();
-            project.tbNotiz.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektNotiz.Name].Value.ToString();
-            project.ShowDialog(this);
-
-            SQLSaveProject(project);
-        }
-
         private void SQLSaveProject(frmProjekt project)
         {
             if (project.shouldSave == true)
@@ -359,14 +342,25 @@ namespace TeamManagement_Tool
                             //"'" + project.dtpRelease.Value.Date.ToString() + "'," +
                         "'" + project.tbArbeitstitel.Text + "'," +
                         "'" + project.tbNotiz.Text + "');";
-
-                        sqlCmd = new MySqlCommand(cmdString, sqlConnection);
-                        sqlCmd.ExecuteNonQuery();
                     }
                     else //Bestehendes Ändern
                     {
-
+                        cmdString =
+                        "UPDATE Projects " +
+                        "SET " +
+                        "Name = '"+project.tbName.Text+"', " +
+                        "Genre = '"+project.tbGenre.Text+"', " +
+                        "Stil = '"+project.tbStil.Text+"', " +
+                        "Platform = '"+project.tbPlatform.Text+"', " +
+                        "Startdatum = '"+project.tbStartDatum.Text+"', " +
+                        "Projects.Release = '"+project.tbRelease.Text+"', " +
+                        "Arbeitstitel = '"+project.tbArbeitstitel.Text+"', " +
+                        "Notiz = '"+project.tbNotiz.Text+"' " +
+                        "WHERE id = '" + project.tbID.Text + "';";
                     }
+                    Console.WriteLine(cmdString);
+                    sqlCmd = new MySqlCommand(cmdString, sqlConnection);
+                    sqlCmd.ExecuteNonQuery();
 
                     sqlConnection.Close();
                     SQLRefreshProjekte();
@@ -378,6 +372,47 @@ namespace TeamManagement_Tool
                 }
 
                 Console.WriteLine("BLA");
+            }
+        }
+
+        private void dgProjekt_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            frmProjekt project = new frmProjekt();
+            project.tbID.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektID.Name].Value.ToString();
+            project.tbName.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektName.Name].Value.ToString();
+            project.tbGenre.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektGenre.Name].Value.ToString();
+            project.tbStil.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektStil.Name].Value.ToString();
+            project.tbPlatform.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektPlatform.Name].Value.ToString();
+            project.tbStartDatum.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektStartDatum.Name].Value.ToString();
+            project.tbRelease.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektRelease.Name].Value.ToString();
+            project.tbArbeitstitel.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektArbeitstitel.Name].Value.ToString();
+            project.tbNotiz.Text = dgProjekt.Rows[e.RowIndex].Cells[dgProjektNotiz.Name].Value.ToString();
+            project.ShowDialog(this);
+
+            SQLSaveProject(project);
+        }
+
+        private void dgProjekt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return || e.KeyCode == Keys.Enter)
+            {
+                if (dgProjekt.SelectedRows.Count > 0)
+                {
+                    int rowIndex = dgProjekt.SelectedRows[0].Index;
+                    frmProjekt project = new frmProjekt();
+                    project.tbID.Text = dgProjekt.Rows[rowIndex].Cells[dgProjektID.Name].Value.ToString();
+                    project.tbName.Text = dgProjekt.Rows[rowIndex].Cells[dgProjektName.Name].Value.ToString();
+                    project.tbGenre.Text = dgProjekt.Rows[rowIndex].Cells[dgProjektGenre.Name].Value.ToString();
+                    project.tbStil.Text = dgProjekt.Rows[rowIndex].Cells[dgProjektStil.Name].Value.ToString();
+                    project.tbPlatform.Text = dgProjekt.Rows[rowIndex].Cells[dgProjektPlatform.Name].Value.ToString();
+                    project.tbStartDatum.Text = dgProjekt.Rows[rowIndex].Cells[dgProjektStartDatum.Name].Value.ToString();
+                    project.tbRelease.Text = dgProjekt.Rows[rowIndex].Cells[dgProjektRelease.Name].Value.ToString();
+                    project.tbArbeitstitel.Text = dgProjekt.Rows[rowIndex].Cells[dgProjektArbeitstitel.Name].Value.ToString();
+                    project.tbNotiz.Text = dgProjekt.Rows[rowIndex].Cells[dgProjektNotiz.Name].Value.ToString();
+                    project.ShowDialog(this);
+
+                    SQLSaveProject(project);
+                }
             }
         }
     }
