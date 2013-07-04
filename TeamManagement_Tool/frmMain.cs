@@ -171,22 +171,53 @@ namespace TeamManagement_Tool
         {
             try
             {
-                //Mitarbeiter
+                //Projekt
 
                 MySqlCommand sqlCmd = new MySqlCommand("Select * from Projects", sqlConnection);
                 sqlConnection.Open();
                 MySqlDataReader sqlRead = sqlCmd.ExecuteReader();
 
+                MySqlConnection sqlSubConnection = new MySqlConnection(sqlConnection.ConnectionString + ";Password=" + sqlPassword);
+                sqlSubConnection.Open();
+                MySqlCommand sqlSubCommand;
+                MySqlDataReader sqlSubReader;
+
                 mainScreen.dgProjekt.Rows.Clear();
+                tvProjekt.Nodes.Clear();
+                TreeNode projectNode;
+                TreeNode areaNode;
 
                 if (sqlRead.HasRows)
                 {
                     while (sqlRead.Read())
                     {
+                        projectNode = new TreeNode();
+
+                        projectNode.Text = sqlRead.GetString("Name");
+                        projectNode.Tag = sqlRead.GetString("id");
+                       
+
+                        sqlSubCommand = new MySqlCommand("Select * from ProjectAreas where ProjectID = " + Convert.ToInt32(sqlRead.GetString("id")), sqlSubConnection);
+                        sqlSubReader = sqlSubCommand.ExecuteReader();
+
+                        if (sqlRead.HasRows)
+                        {
+                            while (sqlSubReader.Read())
+                            {
+                                areaNode = new TreeNode();
+                                areaNode.Text = sqlSubReader.GetString("Name");
+                                areaNode.Tag = sqlSubReader.GetString("ID");
+                                projectNode.Nodes.Add(areaNode);
+                            }
+                            sqlSubReader.Close();
+                        }
+                         tvProjekt.Nodes.Add(projectNode);
+
                         DataGridViewRow row = dgProjekt.Rows[dgProjekt.Rows.Add()];
 
                         row.Cells[dgProjektID.Name].Value = sqlRead.GetString("id");
                         row.Cells[dgProjektName.Name].Value = sqlRead.GetString("Name");
+                        row.Cells[dgProjektProjektLeiter.Name].Value = sqlRead.GetString("ProjektLeiter");
                         row.Cells[dgProjektGenre.Name].Value = sqlRead.GetString("Genre");
                         row.Cells[dgProjektStil.Name].Value = sqlRead.GetString("Stil");
                         row.Cells[dgProjektPlatform.Name].Value = sqlRead.GetString("Platform");
@@ -208,6 +239,7 @@ namespace TeamManagement_Tool
                 if (sqlConnection.State != System.Data.ConnectionState.Closed) sqlConnection.Close();
             }
         }
+
 
         void SQLRefreshMitarbeiter()
         {
@@ -348,14 +380,14 @@ namespace TeamManagement_Tool
                         cmdString =
                         "UPDATE Projects " +
                         "SET " +
-                        "Name = '"+project.tbName.Text+"', " +
-                        "Genre = '"+project.tbGenre.Text+"', " +
-                        "Stil = '"+project.tbStil.Text+"', " +
-                        "Platform = '"+project.tbPlatform.Text+"', " +
-                        "Startdatum = '"+project.tbStartDatum.Text+"', " +
-                        "Projects.Release = '"+project.tbRelease.Text+"', " +
-                        "Arbeitstitel = '"+project.tbArbeitstitel.Text+"', " +
-                        "Notiz = '"+project.tbNotiz.Text+"' " +
+                        "Name = '" + project.tbName.Text + "', " +
+                        "Genre = '" + project.tbGenre.Text + "', " +
+                        "Stil = '" + project.tbStil.Text + "', " +
+                        "Platform = '" + project.tbPlatform.Text + "', " +
+                        "Startdatum = '" + project.tbStartDatum.Text + "', " +
+                        "Projects.Release = '" + project.tbRelease.Text + "', " +
+                        "Arbeitstitel = '" + project.tbArbeitstitel.Text + "', " +
+                        "Notiz = '" + project.tbNotiz.Text + "' " +
                         "WHERE id = '" + project.tbID.Text + "';";
                     }
                     Console.WriteLine(cmdString);
@@ -413,6 +445,76 @@ namespace TeamManagement_Tool
 
                     SQLSaveProject(project);
                 }
+            }
+        }
+
+        private void tpAdministration_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tvProjekt_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void tvProjekt_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            tvProjekt.SelectedNode = e.Node;
+
+            if (e.Node.Parent != null)
+            {
+                tbAreaID.Text = e.Node.Tag.ToString();
+                tbAreaText.Text = e.Node.Text;
+
+                tbAreaProjectID.Text = e.Node.Parent.Tag.ToString();
+                tbAreaProjectText.Text = e.Node.Parent.Text;
+
+                tbAreaBereichsLeiter.Text = "-- HIER kommt die SQL Abfrage --";
+                tbAreaFortschritt.Text = "-- HIER kommt die SQL Abfrage --";
+                tbAreaNotiz.Text = "-- HIER kommt die SQL Abfrage --";
+            }
+            else
+            {
+                tbAreaProjectID.Text = e.Node.Tag.ToString();
+                tbAreaProjectText.Text = e.Node.Text;
+
+                tbAreaID.Text = "-----";
+                tbAreaText.Text = "-----";
+                tbAreaBereichsLeiter.Text = "-----";
+                tbAreaFortschritt.Text = "-----";
+                tbAreaNotiz.Text = "-----";
+            }
+        }
+
+        private void tvProjekt_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+
+            tvProjekt.SelectedNode = e.Node;
+
+            if (e.Node.Parent != null)
+            {
+
+                tbAreaID.Text = e.Node.Tag.ToString();
+                tbAreaText.Text = e.Node.Text;
+
+                tbAreaProjectID.Text = e.Node.Parent.Tag.ToString();
+                tbAreaProjectText.Text = e.Node.Parent.Text;
+                
+                tbAreaBereichsLeiter.Text = "-- Für Weitere Infos Doppelklick --";
+                tbAreaFortschritt.Text = "-- Für Weitere Infos Doppelklick --";
+                tbAreaNotiz.Text = "-- Für Weitere Infos Doppelklick --";
+            }
+            else
+            {
+                tbAreaProjectID.Text = e.Node.Tag.ToString();
+                tbAreaProjectText.Text = e.Node.Text;
+
+                tbAreaID.Text = "-----";
+                tbAreaText.Text = "-----";
+                tbAreaBereichsLeiter.Text = "-----";
+                tbAreaFortschritt.Text = "-----";
+                tbAreaNotiz.Text = "-----";
             }
         }
     }

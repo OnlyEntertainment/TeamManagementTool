@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Grafik");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Entwickler");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("John Riddle I", new System.Windows.Forms.TreeNode[] {
-            treeNode21,
-            treeNode22});
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("John Riddle II");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Grafik");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Entwickler");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("John Riddle I", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("John Riddle II");
             this.menu = new System.Windows.Forms.MenuStrip();
             this.menuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFileProperties = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +45,7 @@
             this.menuHelpHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabTask = new System.Windows.Forms.TabPage();
+            this.tpAufgaben = new System.Windows.Forms.TabPage();
             this.btnTaskNew = new System.Windows.Forms.Button();
             this.lblTaskResponsible = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -63,7 +63,7 @@
             this.Verantwortlicher = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeadLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Beschreibung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tpBugs = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
@@ -81,7 +81,7 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sdas = new System.Windows.Forms.TabPage();
+            this.tpOnlyEntertainment = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabMitarbeiter = new System.Windows.Forms.TabPage();
             this.dgMitarbeiter = new System.Windows.Forms.DataGridView();
@@ -104,16 +104,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dgProjekt = new System.Windows.Forms.DataGridView();
-            this.dgProjektID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgProjektName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgProjektGenre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgProjektStil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgProjektPlatform = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgProjektStartDatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgProjektRelease = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgProjektArbeitstitel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgProjektNotiz = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tpAllgemein = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -123,16 +114,16 @@
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tpAdministration = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbAreaProjectText = new System.Windows.Forms.TextBox();
+            this.tbAreaProjectID = new System.Windows.Forms.TextBox();
+            this.tbAreaNotiz = new System.Windows.Forms.TextBox();
+            this.tbAreaFortschritt = new System.Windows.Forms.TextBox();
+            this.tbAreaBereichsLeiter = new System.Windows.Forms.TextBox();
+            this.tbAreaText = new System.Windows.Forms.TextBox();
+            this.tbAreaID = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -141,7 +132,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.btnNewProject = new System.Windows.Forms.Button();
             this.dataGridView8 = new System.Windows.Forms.DataGridView();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.tvProjekt = new System.Windows.Forms.TreeView();
             this.calendar = new System.Windows.Forms.MonthCalendar();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
             this.tbPrivateNote = new System.Windows.Forms.TextBox();
@@ -150,13 +141,23 @@
             this.statusbarLogin = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusbarPermission = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnBugsFeedback = new System.Windows.Forms.Button();
+            this.dgProjektID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgProjektName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgProjektProjektLeiter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgProjektGenre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgProjektStil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgProjektPlatform = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgProjektStartDatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgProjektRelease = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgProjektArbeitstitel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgProjektNotiz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menu.SuspendLayout();
             this.tabControl.SuspendLayout();
-            this.tabTask.SuspendLayout();
+            this.tpAufgaben.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView13)).BeginInit();
-            this.tabPage1.SuspendLayout();
+            this.tpBugs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.sdas.SuspendLayout();
+            this.tpOnlyEntertainment.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabMitarbeiter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgMitarbeiter)).BeginInit();
@@ -166,10 +167,10 @@
             this.tabAdminSkills.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgProjekt)).BeginInit();
-            this.tabPage4.SuspendLayout();
+            this.tpAllgemein.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.tpAdministration.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
@@ -251,34 +252,34 @@
             this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl.Controls.Add(this.tabTask);
-            this.tabControl.Controls.Add(this.tabPage1);
-            this.tabControl.Controls.Add(this.sdas);
-            this.tabControl.Controls.Add(this.tabPage4);
-            this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Controls.Add(this.tpAufgaben);
+            this.tabControl.Controls.Add(this.tpBugs);
+            this.tabControl.Controls.Add(this.tpOnlyEntertainment);
+            this.tabControl.Controls.Add(this.tpAllgemein);
+            this.tabControl.Controls.Add(this.tpAdministration);
             this.tabControl.Location = new System.Drawing.Point(5, 27);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(795, 678);
             this.tabControl.TabIndex = 2;
             // 
-            // tabTask
+            // tpAufgaben
             // 
-            this.tabTask.Controls.Add(this.btnTaskNew);
-            this.tabTask.Controls.Add(this.lblTaskResponsible);
-            this.tabTask.Controls.Add(this.comboBox3);
-            this.tabTask.Controls.Add(this.lblTaskArea);
-            this.tabTask.Controls.Add(this.comboBox2);
-            this.tabTask.Controls.Add(this.lblTaskProject);
-            this.tabTask.Controls.Add(this.comboBox1);
-            this.tabTask.Controls.Add(this.dataGridView13);
-            this.tabTask.Location = new System.Drawing.Point(4, 22);
-            this.tabTask.Name = "tabTask";
-            this.tabTask.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTask.Size = new System.Drawing.Size(787, 652);
-            this.tabTask.TabIndex = 0;
-            this.tabTask.Text = "Aufgaben";
-            this.tabTask.UseVisualStyleBackColor = true;
+            this.tpAufgaben.Controls.Add(this.btnTaskNew);
+            this.tpAufgaben.Controls.Add(this.lblTaskResponsible);
+            this.tpAufgaben.Controls.Add(this.comboBox3);
+            this.tpAufgaben.Controls.Add(this.lblTaskArea);
+            this.tpAufgaben.Controls.Add(this.comboBox2);
+            this.tpAufgaben.Controls.Add(this.lblTaskProject);
+            this.tpAufgaben.Controls.Add(this.comboBox1);
+            this.tpAufgaben.Controls.Add(this.dataGridView13);
+            this.tpAufgaben.Location = new System.Drawing.Point(4, 22);
+            this.tpAufgaben.Name = "tpAufgaben";
+            this.tpAufgaben.Padding = new System.Windows.Forms.Padding(3);
+            this.tpAufgaben.Size = new System.Drawing.Size(787, 652);
+            this.tpAufgaben.TabIndex = 0;
+            this.tpAufgaben.Text = "Aufgaben";
+            this.tpAufgaben.UseVisualStyleBackColor = true;
             // 
             // btnTaskNew
             // 
@@ -413,23 +414,23 @@
             this.Beschreibung.Name = "Beschreibung";
             this.Beschreibung.Width = 300;
             // 
-            // tabPage1
+            // tpBugs
             // 
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.comboBox5);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.comboBox6);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.comboBox7);
-            this.tabPage1.Controls.Add(this.dataGridView2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(787, 652);
-            this.tabPage1.TabIndex = 4;
-            this.tabPage1.Text = "Bugs";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tpBugs.Controls.Add(this.button2);
+            this.tpBugs.Controls.Add(this.label2);
+            this.tpBugs.Controls.Add(this.comboBox5);
+            this.tpBugs.Controls.Add(this.label3);
+            this.tpBugs.Controls.Add(this.comboBox6);
+            this.tpBugs.Controls.Add(this.label4);
+            this.tpBugs.Controls.Add(this.comboBox7);
+            this.tpBugs.Controls.Add(this.dataGridView2);
+            this.tpBugs.Location = new System.Drawing.Point(4, 22);
+            this.tpBugs.Name = "tpBugs";
+            this.tpBugs.Padding = new System.Windows.Forms.Padding(3);
+            this.tpBugs.Size = new System.Drawing.Size(787, 652);
+            this.tpBugs.TabIndex = 4;
+            this.tpBugs.Text = "Bugs";
+            this.tpBugs.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -565,17 +566,17 @@
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.Width = 300;
             // 
-            // sdas
+            // tpOnlyEntertainment
             // 
-            this.sdas.Controls.Add(this.tabControl2);
-            this.sdas.Controls.Add(this.dgProjekt);
-            this.sdas.Location = new System.Drawing.Point(4, 22);
-            this.sdas.Name = "sdas";
-            this.sdas.Padding = new System.Windows.Forms.Padding(3);
-            this.sdas.Size = new System.Drawing.Size(787, 652);
-            this.sdas.TabIndex = 2;
-            this.sdas.Text = "OnlyEntertainment";
-            this.sdas.UseVisualStyleBackColor = true;
+            this.tpOnlyEntertainment.Controls.Add(this.tabControl2);
+            this.tpOnlyEntertainment.Controls.Add(this.dgProjekt);
+            this.tpOnlyEntertainment.Location = new System.Drawing.Point(4, 22);
+            this.tpOnlyEntertainment.Name = "tpOnlyEntertainment";
+            this.tpOnlyEntertainment.Padding = new System.Windows.Forms.Padding(3);
+            this.tpOnlyEntertainment.Size = new System.Drawing.Size(787, 652);
+            this.tpOnlyEntertainment.TabIndex = 2;
+            this.tpOnlyEntertainment.Text = "OnlyEntertainment";
+            this.tpOnlyEntertainment.UseVisualStyleBackColor = true;
             // 
             // tabControl2
             // 
@@ -778,6 +779,7 @@
             this.dgProjekt.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgProjektID,
             this.dgProjektName,
+            this.dgProjektProjektLeiter,
             this.dgProjektGenre,
             this.dgProjektStil,
             this.dgProjektPlatform,
@@ -794,79 +796,24 @@
             this.dgProjekt.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgProjekt_CellMouseDoubleClick);
             this.dgProjekt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgProjekt_KeyDown);
             // 
-            // dgProjektID
+            // tpAllgemein
             // 
-            this.dgProjektID.HeaderText = "ID";
-            this.dgProjektID.Name = "dgProjektID";
-            this.dgProjektID.ReadOnly = true;
-            this.dgProjektID.Width = 25;
-            // 
-            // dgProjektName
-            // 
-            this.dgProjektName.HeaderText = "ProjektName";
-            this.dgProjektName.Name = "dgProjektName";
-            this.dgProjektName.ReadOnly = true;
-            // 
-            // dgProjektGenre
-            // 
-            this.dgProjektGenre.HeaderText = "Genre";
-            this.dgProjektGenre.Name = "dgProjektGenre";
-            this.dgProjektGenre.ReadOnly = true;
-            // 
-            // dgProjektStil
-            // 
-            this.dgProjektStil.HeaderText = "Stil";
-            this.dgProjektStil.Name = "dgProjektStil";
-            this.dgProjektStil.ReadOnly = true;
-            // 
-            // dgProjektPlatform
-            // 
-            this.dgProjektPlatform.HeaderText = "Plattform";
-            this.dgProjektPlatform.Name = "dgProjektPlatform";
-            this.dgProjektPlatform.ReadOnly = true;
-            // 
-            // dgProjektStartDatum
-            // 
-            this.dgProjektStartDatum.HeaderText = "StartDatum";
-            this.dgProjektStartDatum.Name = "dgProjektStartDatum";
-            this.dgProjektStartDatum.ReadOnly = true;
-            // 
-            // dgProjektRelease
-            // 
-            this.dgProjektRelease.HeaderText = "Release";
-            this.dgProjektRelease.Name = "dgProjektRelease";
-            this.dgProjektRelease.ReadOnly = true;
-            // 
-            // dgProjektArbeitstitel
-            // 
-            this.dgProjektArbeitstitel.HeaderText = "Arbeitstitel";
-            this.dgProjektArbeitstitel.Name = "dgProjektArbeitstitel";
-            this.dgProjektArbeitstitel.ReadOnly = true;
-            // 
-            // dgProjektNotiz
-            // 
-            this.dgProjektNotiz.HeaderText = "Notiz";
-            this.dgProjektNotiz.Name = "dgProjektNotiz";
-            this.dgProjektNotiz.ReadOnly = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.button1);
-            this.tabPage4.Controls.Add(this.textBox9);
-            this.tabPage4.Controls.Add(this.label1);
-            this.tabPage4.Controls.Add(this.button5);
-            this.tabPage4.Controls.Add(this.textBox3);
-            this.tabPage4.Controls.Add(this.label8);
-            this.tabPage4.Controls.Add(this.dataGridView4);
-            this.tabPage4.Controls.Add(this.comboBox4);
-            this.tabPage4.Controls.Add(this.dataGridView5);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(787, 652);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Allgemeine Infos";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tpAllgemein.Controls.Add(this.button1);
+            this.tpAllgemein.Controls.Add(this.textBox9);
+            this.tpAllgemein.Controls.Add(this.label1);
+            this.tpAllgemein.Controls.Add(this.button5);
+            this.tpAllgemein.Controls.Add(this.textBox3);
+            this.tpAllgemein.Controls.Add(this.label8);
+            this.tpAllgemein.Controls.Add(this.dataGridView4);
+            this.tpAllgemein.Controls.Add(this.comboBox4);
+            this.tpAllgemein.Controls.Add(this.dataGridView5);
+            this.tpAllgemein.Location = new System.Drawing.Point(4, 22);
+            this.tpAllgemein.Name = "tpAllgemein";
+            this.tpAllgemein.Padding = new System.Windows.Forms.Padding(3);
+            this.tpAllgemein.Size = new System.Drawing.Size(787, 652);
+            this.tpAllgemein.TabIndex = 3;
+            this.tpAllgemein.Text = "Allgemeine Infos";
+            this.tpAllgemein.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -951,33 +898,34 @@
             this.dataGridView5.Size = new System.Drawing.Size(775, 275);
             this.dataGridView5.TabIndex = 15;
             // 
-            // tabPage2
+            // tpAdministration
             // 
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.dataGridView6);
-            this.tabPage2.Controls.Add(this.textBox8);
-            this.tabPage2.Controls.Add(this.textBox7);
-            this.tabPage2.Controls.Add(this.textBox6);
-            this.tabPage2.Controls.Add(this.textBox4);
-            this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.textBox1);
-            this.tabPage2.Controls.Add(this.textBox5);
-            this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.dataGridView9);
-            this.tabPage2.Controls.Add(this.button8);
-            this.tabPage2.Controls.Add(this.button7);
-            this.tabPage2.Controls.Add(this.btnNewProject);
-            this.tabPage2.Controls.Add(this.dataGridView8);
-            this.tabPage2.Controls.Add(this.treeView1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(787, 652);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Administration";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tpAdministration.Controls.Add(this.label9);
+            this.tpAdministration.Controls.Add(this.dataGridView6);
+            this.tpAdministration.Controls.Add(this.tbAreaProjectText);
+            this.tpAdministration.Controls.Add(this.tbAreaProjectID);
+            this.tpAdministration.Controls.Add(this.tbAreaNotiz);
+            this.tpAdministration.Controls.Add(this.tbAreaFortschritt);
+            this.tpAdministration.Controls.Add(this.tbAreaBereichsLeiter);
+            this.tpAdministration.Controls.Add(this.tbAreaText);
+            this.tpAdministration.Controls.Add(this.tbAreaID);
+            this.tpAdministration.Controls.Add(this.button4);
+            this.tpAdministration.Controls.Add(this.label10);
+            this.tpAdministration.Controls.Add(this.label11);
+            this.tpAdministration.Controls.Add(this.dataGridView9);
+            this.tpAdministration.Controls.Add(this.button8);
+            this.tpAdministration.Controls.Add(this.button7);
+            this.tpAdministration.Controls.Add(this.btnNewProject);
+            this.tpAdministration.Controls.Add(this.dataGridView8);
+            this.tpAdministration.Controls.Add(this.tvProjekt);
+            this.tpAdministration.Location = new System.Drawing.Point(4, 22);
+            this.tpAdministration.Name = "tpAdministration";
+            this.tpAdministration.Padding = new System.Windows.Forms.Padding(3);
+            this.tpAdministration.Size = new System.Drawing.Size(787, 652);
+            this.tpAdministration.TabIndex = 1;
+            this.tpAdministration.Text = "Administration";
+            this.tpAdministration.UseVisualStyleBackColor = true;
+            this.tpAdministration.Click += new System.EventHandler(this.tpAdministration_Click);
             // 
             // label9
             // 
@@ -993,63 +941,63 @@
             this.dataGridView6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(306, 37);
+            this.dataGridView6.Location = new System.Drawing.Point(306, 35);
             this.dataGridView6.Name = "dataGridView6";
             this.dataGridView6.Size = new System.Drawing.Size(475, 403);
             this.dataGridView6.TabIndex = 64;
             // 
-            // textBox8
+            // tbAreaProjectText
             // 
-            this.textBox8.Location = new System.Drawing.Point(6, 399);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(294, 20);
-            this.textBox8.TabIndex = 63;
+            this.tbAreaProjectText.Location = new System.Drawing.Point(6, 269);
+            this.tbAreaProjectText.Name = "tbAreaProjectText";
+            this.tbAreaProjectText.Size = new System.Drawing.Size(294, 20);
+            this.tbAreaProjectText.TabIndex = 63;
             // 
-            // textBox7
+            // tbAreaProjectID
             // 
-            this.textBox7.Location = new System.Drawing.Point(6, 373);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(294, 20);
-            this.textBox7.TabIndex = 62;
+            this.tbAreaProjectID.Location = new System.Drawing.Point(6, 243);
+            this.tbAreaProjectID.Name = "tbAreaProjectID";
+            this.tbAreaProjectID.Size = new System.Drawing.Size(294, 20);
+            this.tbAreaProjectID.TabIndex = 62;
             // 
-            // textBox6
+            // tbAreaNotiz
             // 
-            this.textBox6.Location = new System.Drawing.Point(6, 347);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(294, 20);
-            this.textBox6.TabIndex = 61;
+            this.tbAreaNotiz.Location = new System.Drawing.Point(6, 399);
+            this.tbAreaNotiz.Name = "tbAreaNotiz";
+            this.tbAreaNotiz.Size = new System.Drawing.Size(294, 20);
+            this.tbAreaNotiz.TabIndex = 61;
             // 
-            // textBox4
+            // tbAreaFortschritt
             // 
-            this.textBox4.Location = new System.Drawing.Point(6, 321);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(294, 20);
-            this.textBox4.TabIndex = 60;
+            this.tbAreaFortschritt.Location = new System.Drawing.Point(6, 373);
+            this.tbAreaFortschritt.Name = "tbAreaFortschritt";
+            this.tbAreaFortschritt.Size = new System.Drawing.Size(294, 20);
+            this.tbAreaFortschritt.TabIndex = 60;
             // 
-            // textBox2
+            // tbAreaBereichsLeiter
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 295);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(294, 20);
-            this.textBox2.TabIndex = 59;
+            this.tbAreaBereichsLeiter.Location = new System.Drawing.Point(6, 347);
+            this.tbAreaBereichsLeiter.Name = "tbAreaBereichsLeiter";
+            this.tbAreaBereichsLeiter.Size = new System.Drawing.Size(294, 20);
+            this.tbAreaBereichsLeiter.TabIndex = 59;
             // 
-            // textBox1
+            // tbAreaText
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tbAreaText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(6, 269);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(294, 20);
-            this.textBox1.TabIndex = 58;
+            this.tbAreaText.Location = new System.Drawing.Point(6, 321);
+            this.tbAreaText.Name = "tbAreaText";
+            this.tbAreaText.Size = new System.Drawing.Size(294, 20);
+            this.tbAreaText.TabIndex = 58;
             // 
-            // textBox5
+            // tbAreaID
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tbAreaID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(6, 243);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(294, 20);
-            this.textBox5.TabIndex = 57;
+            this.tbAreaID.Location = new System.Drawing.Point(6, 295);
+            this.tbAreaID.Name = "tbAreaID";
+            this.tbAreaID.Size = new System.Drawing.Size(294, 20);
+            this.tbAreaID.TabIndex = 57;
             // 
             // button4
             // 
@@ -1127,24 +1075,27 @@
             this.dataGridView8.Size = new System.Drawing.Size(294, 200);
             this.dataGridView8.TabIndex = 17;
             // 
-            // treeView1
+            // tvProjekt
             // 
-            this.treeView1.Location = new System.Drawing.Point(6, 37);
-            this.treeView1.Name = "treeView1";
-            treeNode21.Name = "Knoten2";
-            treeNode21.Text = "Grafik";
-            treeNode22.Name = "Knoten3";
-            treeNode22.Text = "Entwickler";
-            treeNode23.Name = "NOde 1";
-            treeNode23.Text = "John Riddle I";
-            treeNode24.Name = "Node2";
-            treeNode24.Text = "John Riddle II";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode23,
-            treeNode24});
-            this.treeView1.Size = new System.Drawing.Size(294, 200);
-            this.treeView1.TabIndex = 12;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            this.tvProjekt.Location = new System.Drawing.Point(6, 37);
+            this.tvProjekt.Name = "tvProjekt";
+            treeNode1.Name = "Knoten2";
+            treeNode1.Text = "Grafik";
+            treeNode2.Name = "Knoten3";
+            treeNode2.Text = "Entwickler";
+            treeNode3.Name = "NOde 1";
+            treeNode3.Text = "John Riddle I";
+            treeNode4.Name = "Node2";
+            treeNode4.Text = "John Riddle II";
+            this.tvProjekt.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode3,
+            treeNode4});
+            this.tvProjekt.Size = new System.Drawing.Size(294, 200);
+            this.tvProjekt.TabIndex = 12;
+            this.tvProjekt.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            this.tvProjekt.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvProjekt_NodeMouseClick);
+            this.tvProjekt.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvProjekt_NodeMouseDoubleClick);
+            this.tvProjekt.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.tvProjekt_MouseDoubleClick);
             // 
             // calendar
             // 
@@ -1214,6 +1165,67 @@
             this.btnBugsFeedback.UseVisualStyleBackColor = true;
             this.btnBugsFeedback.Click += new System.EventHandler(this.btnBugsFeedback_Click);
             // 
+            // dgProjektID
+            // 
+            this.dgProjektID.HeaderText = "ID";
+            this.dgProjektID.Name = "dgProjektID";
+            this.dgProjektID.ReadOnly = true;
+            this.dgProjektID.Width = 25;
+            // 
+            // dgProjektName
+            // 
+            this.dgProjektName.HeaderText = "ProjektName";
+            this.dgProjektName.Name = "dgProjektName";
+            this.dgProjektName.ReadOnly = true;
+            // 
+            // dgProjektProjektLeiter
+            // 
+            this.dgProjektProjektLeiter.HeaderText = "ProjektLeiter";
+            this.dgProjektProjektLeiter.Name = "dgProjektProjektLeiter";
+            this.dgProjektProjektLeiter.ReadOnly = true;
+            // 
+            // dgProjektGenre
+            // 
+            this.dgProjektGenre.HeaderText = "Genre";
+            this.dgProjektGenre.Name = "dgProjektGenre";
+            this.dgProjektGenre.ReadOnly = true;
+            // 
+            // dgProjektStil
+            // 
+            this.dgProjektStil.HeaderText = "Stil";
+            this.dgProjektStil.Name = "dgProjektStil";
+            this.dgProjektStil.ReadOnly = true;
+            // 
+            // dgProjektPlatform
+            // 
+            this.dgProjektPlatform.HeaderText = "Plattform";
+            this.dgProjektPlatform.Name = "dgProjektPlatform";
+            this.dgProjektPlatform.ReadOnly = true;
+            // 
+            // dgProjektStartDatum
+            // 
+            this.dgProjektStartDatum.HeaderText = "StartDatum";
+            this.dgProjektStartDatum.Name = "dgProjektStartDatum";
+            this.dgProjektStartDatum.ReadOnly = true;
+            // 
+            // dgProjektRelease
+            // 
+            this.dgProjektRelease.HeaderText = "Release";
+            this.dgProjektRelease.Name = "dgProjektRelease";
+            this.dgProjektRelease.ReadOnly = true;
+            // 
+            // dgProjektArbeitstitel
+            // 
+            this.dgProjektArbeitstitel.HeaderText = "Arbeitstitel";
+            this.dgProjektArbeitstitel.Name = "dgProjektArbeitstitel";
+            this.dgProjektArbeitstitel.ReadOnly = true;
+            // 
+            // dgProjektNotiz
+            // 
+            this.dgProjektNotiz.HeaderText = "Notiz";
+            this.dgProjektNotiz.Name = "dgProjektNotiz";
+            this.dgProjektNotiz.ReadOnly = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1236,13 +1248,13 @@
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.tabControl.ResumeLayout(false);
-            this.tabTask.ResumeLayout(false);
-            this.tabTask.PerformLayout();
+            this.tpAufgaben.ResumeLayout(false);
+            this.tpAufgaben.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView13)).EndInit();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tpBugs.ResumeLayout(false);
+            this.tpBugs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.sdas.ResumeLayout(false);
+            this.tpOnlyEntertainment.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabMitarbeiter.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgMitarbeiter)).EndInit();
@@ -1253,12 +1265,12 @@
             this.tabAdminSkills.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgProjekt)).EndInit();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
+            this.tpAllgemein.ResumeLayout(false);
+            this.tpAllgemein.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.tpAdministration.ResumeLayout(false);
+            this.tpAdministration.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
@@ -1274,8 +1286,8 @@
 
         private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage tabTask;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tpAufgaben;
+        private System.Windows.Forms.TabPage tpAdministration;
         private System.Windows.Forms.Label lblTaskResponsible;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label lblTaskArea;
@@ -1293,14 +1305,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DeadLine;
         private System.Windows.Forms.DataGridViewTextBoxColumn Beschreibung;
         private System.Windows.Forms.Button btnTaskNew;
-        private System.Windows.Forms.TabPage sdas;
+        private System.Windows.Forms.TabPage tpOnlyEntertainment;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabMitarbeiter;
         private System.Windows.Forms.DataGridView dgMitarbeiter;
         private System.Windows.Forms.TabPage tabGenreSkills;
         private System.Windows.Forms.DataGridView dgProjekt;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TabPage tpAllgemein;
+        private System.Windows.Forms.TreeView tvProjekt;
         private System.Windows.Forms.MonthCalendar calendar;
         private System.Windows.Forms.DataGridView dataGridView7;
         private System.Windows.Forms.TextBox tbPrivateNote;
@@ -1315,7 +1327,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView dataGridView9;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tbAreaID;
         private System.Windows.Forms.StatusStrip statusbar;
         private System.Windows.Forms.ToolStripMenuItem menuFile;
         private System.Windows.Forms.ToolStripMenuItem menuFileProperties;
@@ -1333,12 +1345,12 @@
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.DataGridView dataGridView5;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbAreaProjectText;
+        private System.Windows.Forms.TextBox tbAreaProjectID;
+        private System.Windows.Forms.TextBox tbAreaNotiz;
+        private System.Windows.Forms.TextBox tbAreaFortschritt;
+        private System.Windows.Forms.TextBox tbAreaBereichsLeiter;
+        private System.Windows.Forms.TextBox tbAreaText;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridView6;
         private System.Windows.Forms.Button btnBugsFeedback;
@@ -1357,7 +1369,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgMitarbeiterRegion;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgMitarbeiterLand;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgMitarbeiterPermissionLevel;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tpBugs;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox5;
@@ -1380,6 +1392,7 @@
         private System.Windows.Forms.ToolStripMenuItem blubToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgProjektID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgProjektName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgProjektProjektLeiter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgProjektGenre;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgProjektStil;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgProjektPlatform;
